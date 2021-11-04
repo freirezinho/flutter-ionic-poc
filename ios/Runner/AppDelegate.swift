@@ -11,7 +11,7 @@ import Flutter
     GeneratedPluginRegistrant.register(with: self)
     let flutterViewController: FlutterViewController = window?.rootViewController as! FlutterViewController
     
-    let firstIonicChannel = FlutterMethodChannel(name: "com.bundle/navToIonic", binaryMessenger: flutterViewController.binaryMessenger)
+    let firstIonicChannel = FlutterMethodChannel(name: "com.ionicFlutterPoc/navToIonic", binaryMessenger: flutterViewController.binaryMessenger)
     
     firstIonicChannel.setMethodCallHandler { (call, result) in
         guard call.method == "navToIonic" else {

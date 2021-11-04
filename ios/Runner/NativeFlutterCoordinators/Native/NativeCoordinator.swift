@@ -20,10 +20,10 @@ class NativeCoordinator: BaseCoordinator{
   super.start()
   navigateToIonicViewController() }
  }
-protocol IonicToNativeCoordinatorDelegate: class {
+protocol IonicToNativeCoordinatorDelegate: AnyObject {
  func navigateToFlutterViewController()
 }
-protocol FlutterToNativeCoordinatorDelegate: class {
+protocol FlutterToNativeCoordinatorDelegate: AnyObject {
  func navigateToIonicViewController()
 }
 

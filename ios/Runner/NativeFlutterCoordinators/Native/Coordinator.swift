@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol Coordinator: class {
+protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get }
     func add(_ coordinator: Coordinator)
     func remove(_ coordinator: Coordinator)

@@ -14,9 +14,9 @@ final class IonicCoordinator: BaseCoordinator {
     
     override func start() {
         super.start()
-        let vc = UIViewController()
-        // vc.delegate = self
-        navigationController?.pushViewController(vc, animated: false)
+        let ionicViewController = IonicViewController()
+        ionicViewController.coordinatorDelegate = self
+        navigationController?.pushViewController(ionicViewController, animated: false)
     }
     
     init(navigationController: UINavigationController?) {
