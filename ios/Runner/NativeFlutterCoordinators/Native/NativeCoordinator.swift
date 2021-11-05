@@ -9,22 +9,25 @@ import Foundation
 import UIKit
 
 class NativeCoordinator: BaseCoordinator{
- weak var navigationController: UINavigationController?
+    weak var navigationController: UINavigationController?
  
- init(navigationController: UINavigationController) {
-   super.init()
-   self.navigationController = navigationController
- }
+    init(navigationController: UINavigationController) {
+        super.init()
+        self.navigationController = navigationController
+    }
  
- override func start() {
-  super.start()
-  navigateToIonicViewController() }
+    override func start() {
+        super.start()
+        navigateToIonicViewController()
+    }
  }
+
 protocol IonicToNativeCoordinatorDelegate: AnyObject {
- func navigateToFlutterViewController()
+    func navigateToFlutterViewController()
 }
+
 protocol FlutterToNativeCoordinatorDelegate: AnyObject {
- func navigateToIonicViewController()
+    func navigateToIonicViewController()
 }
 
 extension NativeCoordinator: IonicToNativeCoordinatorDelegate{
@@ -38,7 +41,7 @@ extension NativeCoordinator: IonicToNativeCoordinatorDelegate{
 
 extension NativeCoordinator: FlutterToNativeCoordinatorDelegate{
     func navigateToIonicViewController(){
-        let coordinator = IonicCoordinator(navigationController: self.navigationController)
+        let coordinator = IonicFirstAppCoordinator(navigationController: self.navigationController)
         coordinator.delegate = self
         self.add(coordinator)
         coordinator.start()

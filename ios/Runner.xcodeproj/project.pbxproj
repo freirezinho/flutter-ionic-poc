@@ -10,12 +10,16 @@
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		27006C0D2734507000280FDB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27006C0C2734507000280FDB /* Coordinator.swift */; };
 		27006C0F2734507C00280FDB /* NativeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27006C0E2734507C00280FDB /* NativeCoordinator.swift */; };
-		27006C112734508E00280FDB /* IonicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27006C102734508E00280FDB /* IonicCoordinator.swift */; };
+		27006C112734508E00280FDB /* IonicFirstAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27006C102734508E00280FDB /* IonicFirstAppCoordinator.swift */; };
 		27006C13273450A300280FDB /* FlutterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27006C12273450A300280FDB /* FlutterCoordinator.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		865F3D842BA74E8D59F039D0 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B19B5DB70D7B692647077B /* Pods_Runner.framework */; };
-		8B3C623C273477F00057F484 /* IonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C623B273477F00057F484 /* IonicViewController.swift */; };
+		8B3C623C273477F00057F484 /* IonicFirstAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C623B273477F00057F484 /* IonicFirstAppViewController.swift */; };
+		8B3C62402735B7330057F484 /* CordovaCustomCommandDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C623F2735B7330057F484 /* CordovaCustomCommandDelegate.swift */; };
+		8B3C62422735C1AD0057F484 /* NSURLRequestCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C62412735C1AD0057F484 /* NSURLRequestCertificate.m */; };
+		8B3C62462735CC450057F484 /* CDVCommandDelegateImpl+CDVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C62452735CC450057F484 /* CDVCommandDelegateImpl+CDVViewController.m */; };
+		8B3C62492735CD190057F484 /* CDVViewController+CDVViewController_IonicIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C62482735CD190057F484 /* CDVViewController+CDVViewController_IonicIntegration.m */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
@@ -39,7 +43,7 @@
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		27006C0C2734507000280FDB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		27006C0E2734507C00280FDB /* NativeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCoordinator.swift; sourceTree = "<group>"; };
-		27006C102734508E00280FDB /* IonicCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IonicCoordinator.swift; sourceTree = "<group>"; };
+		27006C102734508E00280FDB /* IonicFirstAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IonicFirstAppCoordinator.swift; sourceTree = "<group>"; };
 		27006C12273450A300280FDB /* FlutterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterCoordinator.swift; sourceTree = "<group>"; };
 		2D32AA5C8F10D40E8B596CC3 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		337F000197755F0334026CE8 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,7 +52,13 @@
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
-		8B3C623B273477F00057F484 /* IonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IonicViewController.swift; sourceTree = "<group>"; };
+		8B3C623B273477F00057F484 /* IonicFirstAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IonicFirstAppViewController.swift; sourceTree = "<group>"; };
+		8B3C623F2735B7330057F484 /* CordovaCustomCommandDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordovaCustomCommandDelegate.swift; sourceTree = "<group>"; };
+		8B3C62412735C1AD0057F484 /* NSURLRequestCertificate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLRequestCertificate.m; sourceTree = "<group>"; };
+		8B3C62432735CB350057F484 /* CDVCommandDelegateImpl+CDVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CDVCommandDelegateImpl+CDVViewController.h"; sourceTree = "<group>"; };
+		8B3C62452735CC450057F484 /* CDVCommandDelegateImpl+CDVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CDVCommandDelegateImpl+CDVViewController.m"; sourceTree = "<group>"; };
+		8B3C62472735CD190057F484 /* CDVViewController+IonicIntegration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CDVViewController+IonicIntegration.h"; sourceTree = "<group>"; };
+		8B3C62482735CD190057F484 /* CDVViewController+CDVViewController_IonicIntegration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CDVViewController+CDVViewController_IonicIntegration.m"; sourceTree = "<group>"; };
 		92B19B5DB70D7B692647077B /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
@@ -101,8 +111,8 @@
 		27006C0B27344FA000280FDB /* Ionic */ = {
 			isa = PBXGroup;
 			children = (
-				27006C102734508E00280FDB /* IonicCoordinator.swift */,
-				8B3C623B273477F00057F484 /* IonicViewController.swift */,
+				27006C102734508E00280FDB /* IonicFirstAppCoordinator.swift */,
+				8B3C623B273477F00057F484 /* IonicFirstAppViewController.swift */,
 			);
 			path = Ionic;
 			sourceTree = "<group>";
@@ -123,6 +133,35 @@
 				6AAB258AF9A0A6DC7C782F75 /* Pods-Runner.profile.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8B3C623E2735B6D10057F484 /* IonicBridges */ = {
+			isa = PBXGroup;
+			children = (
+				8B3C624A2735D6110057F484 /* Objective-C */,
+				8B3C623F2735B7330057F484 /* CordovaCustomCommandDelegate.swift */,
+			);
+			path = IonicBridges;
+			sourceTree = "<group>";
+		};
+		8B3C624A2735D6110057F484 /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				8B3C624B2735D62A0057F484 /* includes */,
+				8B3C62412735C1AD0057F484 /* NSURLRequestCertificate.m */,
+				8B3C62452735CC450057F484 /* CDVCommandDelegateImpl+CDVViewController.m */,
+				8B3C62482735CD190057F484 /* CDVViewController+CDVViewController_IonicIntegration.m */,
+			);
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		8B3C624B2735D62A0057F484 /* includes */ = {
+			isa = PBXGroup;
+			children = (
+				8B3C62432735CB350057F484 /* CDVCommandDelegateImpl+CDVViewController.h */,
+				8B3C62472735CD190057F484 /* CDVViewController+IonicIntegration.h */,
+			);
+			path = includes;
 			sourceTree = "<group>";
 		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
@@ -158,6 +197,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				8B3C623E2735B6D10057F484 /* IonicBridges */,
 				27006C0827344F3E00280FDB /* NativeFlutterCoordinators */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
@@ -186,6 +226,7 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				B527C2E098818F856A2293C7 /* [CP] Embed Pods Frameworks */,
+				8B3C623D2735717E0057F484 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -280,6 +321,24 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin\n";
 		};
+		8B3C623D2735717E0057F484 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/bin/sh\n# \"$PODS_ROOT/ionicAppOne/platforms/ios/MyApp/Scripts/copy-www-build-step.sh\"\necho \"Is it necessary?\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9740EEB61CF901F6004384FC /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,13 +377,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B3C62492735CD190057F484 /* CDVViewController+CDVViewController_IonicIntegration.m in Sources */,
+				8B3C62402735B7330057F484 /* CordovaCustomCommandDelegate.swift in Sources */,
+				8B3C62462735CC450057F484 /* CDVCommandDelegateImpl+CDVViewController.m in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
-				27006C112734508E00280FDB /* IonicCoordinator.swift in Sources */,
+				27006C112734508E00280FDB /* IonicFirstAppCoordinator.swift in Sources */,
 				27006C0F2734507C00280FDB /* NativeCoordinator.swift in Sources */,
-				8B3C623C273477F00057F484 /* IonicViewController.swift in Sources */,
+				8B3C623C273477F00057F484 /* IonicFirstAppViewController.swift in Sources */,
 				27006C13273450A300280FDB /* FlutterCoordinator.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				27006C0D2734507000280FDB /* Coordinator.swift in Sources */,
+				8B3C62422735C1AD0057F484 /* NSURLRequestCertificate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

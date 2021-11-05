@@ -1,12 +1,12 @@
 PODS:
   - Cordova (5.1.1)
   - Flutter (1.0.0)
-  - ionicAppOne (0.0.5):
+  - ionicAppOne (0.0.7):
     - Cordova (= 5.1.1)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - ionicAppOne (~> 0.0.5)
+  - ionicAppOne (~> 0.0.7)
 
 SPEC REPOS:
   "git@github.com:freirezinho/flutter-ionic-poc-specs.git":
@@ -21,8 +21,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Cordova: 5490a208d8396a5cdbbba24732cb2f8779123f8e
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  ionicAppOne: e0f093e4cc19ff5521dc4aeacb5d8d8a017b9206
+  ionicAppOne: b61511ddde8228d357f012783411cd4708dca7cd
 
-PODFILE CHECKSUM: eacf5950307f47d487e6c2d50d613278a5151f0d
+PODFILE CHECKSUM: 515f81148e53639b030ccac2644917cd46791142
 
 COCOAPODS: 1.11.0
