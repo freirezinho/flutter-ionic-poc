@@ -2,5 +2,4 @@
 #import "Cordova/CDV.h"
 #import "ionicAppOne/MainViewController.h"
 #import "Foundation/Foundation.h"
-#import "CDVCommandDelegateImpl+CDVViewController.h"
 #import "CDVViewController+IonicIntegration.h"

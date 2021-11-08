@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CDVViewController (IonicIntegration)
 - (NSString*)configFilePath;
-- (NSURL*)appUrl;
+- (nullable NSURL*)appUrl;
 @end
 
 @interface CDVViewController (IonicIntegrationExtension)
