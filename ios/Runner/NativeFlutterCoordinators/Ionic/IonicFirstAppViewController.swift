@@ -40,54 +40,56 @@ class IonicFirstAppViewController:MainViewController {
     }
 //    MARK: -TODO: Entender o que vem no "pluginsMap"
     
-//    override func getCommandInstance(_ pluginName: String!) -> Any! {
-//        // first, we try to find the pluginName in the pluginsMap
-//            // (acts as a allowList as well) if it does not exist, we return nil
-//            // NOTE: plugin names are matched as lowercase to avoid problems - however, a
-//            // possible issue is there can be duplicates possible if you had:
-//            // "org.apache.cordova.Foo" and "org.apache.cordova.foo" - only the lower-cased entry will match
-////            NSString* className = [self.pluginsMap objectForKey:[pluginName lowercaseString]];
-////
-//        let className: NSString = NSString(string: self.pluginsMap[pluginName.lowercased()] as! String)
+    override func getCommandInstance(_ pluginName: String!) -> Any! {
+        // first, we try to find the pluginName in the pluginsMap
+            // (acts as a allowList as well) if it does not exist, we return nil
+            // NOTE: plugin names are matched as lowercase to avoid problems - however, a
+            // possible issue is there can be duplicates possible if you had:
+            // "org.apache.cordova.Foo" and "org.apache.cordova.foo" - only the lower-cased entry will match
+//            NSString* className = [self.pluginsMap objectForKey:[pluginName lowercaseString]];
+        print("PLUGINS MAP:")
+        print(pluginsMap)
 //
-//        var obj = self.pluginObjects[className]
-//        if (obj == nil) {
-//            obj = NSClassFromString(className as String)
-//            let podBundle = Bundle(for: MainViewController.self)
-//            let resourceURL = podBundle.resourceURL?.appendingPathComponent("ionicAppOne.bundle")
-//            let resourceBundle = Bundle(url: resourceURL!)
-//            
-//            var fullClassName = NSString(string: "\(resourceBundle!.infoDictionary!["CFBundleExecutable"]!).\(className)")
-//            
-//            if (obj != nil) {
-//                self.register(obj as? CDVPlugin, withClassName: className as String);
-//            } else {
-//                print("CDVPlugin class \(className) (pluginName: \(pluginName) does not exist.")
+        let className: String? = self.pluginsMap[pluginName.lowercased()] as? String
+
+        var obj = self.pluginObjects[className]
+        if (obj == nil && className != nil) {
+            obj = NSClassFromString(className! as String)
+            let podBundle = Bundle(for: MainViewController.self)
+            let resourceURL = podBundle.resourceURL?.appendingPathComponent("ionicAppOne.bundle")
+            let resourceBundle = Bundle(url: resourceURL!)
+            
+            var fullClassName = NSString(string: "\(resourceBundle!.infoDictionary!["CFBundleExecutable"]!).\(className!)")
+            
+            if (obj != nil) {
+                self.register(obj as? CDVPlugin, withClassName: className! as String);
+            } else {
+                print("CDVPlugin class \(className) (pluginName: \(pluginName) does not exist.")
+            }
+        }
+        return obj
+//            if (className == nil) {
+//                return nil;
 //            }
-//        }
-//        return obj
-////            if (className == nil) {
-////                return nil;
-////            }
-////
-////            id obj = [self.pluginObjects objectForKey:className];
-////            if (!obj) {
-////                obj = [[NSClassFromString(className)alloc] initWithWebViewEngine:_webViewEngine];
-////                if (!obj) {
-////                    NSString* fullClassName = [NSString stringWithFormat:@"%@.%@",
-////                                               NSBundle.mainBundle.infoDictionary[@"CFBundleExecutable"],
-////                                               className];
-////                    obj = [[NSClassFromString(fullClassName)alloc] initWithWebViewEngine:_webViewEngine];
-////                }
-////
-////                if (obj != nil) {
-////                    [self registerPlugin:obj withClassName:className];
-////                } else {
-////                    NSLog(@"CDVPlugin class %@ (pluginName: %@) does not exist.", className, pluginName);
-////                }
-////            }
-////            return obj;
-//    }
+//
+//            id obj = [self.pluginObjects objectForKey:className];
+//            if (!obj) {
+//                obj = [[NSClassFromString(className)alloc] initWithWebViewEngine:_webViewEngine];
+//                if (!obj) {
+//                    NSString* fullClassName = [NSString stringWithFormat:@"%@.%@",
+//                                               NSBundle.mainBundle.infoDictionary[@"CFBundleExecutable"],
+//                                               className];
+//                    obj = [[NSClassFromString(fullClassName)alloc] initWithWebViewEngine:_webViewEngine];
+//                }
+//
+//                if (obj != nil) {
+//                    [self registerPlugin:obj withClassName:className];
+//                } else {
+//                    NSLog(@"CDVPlugin class %@ (pluginName: %@) does not exist.", className, pluginName);
+//                }
+//            }
+//            return obj;
+    }
     
     func pathForResource(forResource resourcepath: String) -> String? {
 //        let podBundle = Bundle(for: MainViewController.self)

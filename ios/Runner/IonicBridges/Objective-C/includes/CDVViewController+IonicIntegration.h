@@ -5,7 +5,7 @@
 //  Created by Saulo Santos Freire on 05/11/21.
 //
 
-#import <Cordova/Cordova.h>
+#import "Cordova.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
