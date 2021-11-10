@@ -46,8 +46,8 @@ class IonicFirstAppViewController:MainViewController {
             // NOTE: plugin names are matched as lowercase to avoid problems - however, a
             // possible issue is there can be duplicates possible if you had:
             // "org.apache.cordova.Foo" and "org.apache.cordova.foo" - only the lower-cased entry will match
-        print("PLUGINS MAP:")
-        print(pluginsMap)
+//        print("PLUGINS MAP:")
+//        print(pluginsMap)
 //
         guard let className: String = self.pluginsMap[pluginName.lowercased()] as? String else {return nil}
 
@@ -70,7 +70,7 @@ class IonicFirstAppViewController:MainViewController {
                 print("CDVPlugin class \(String(describing: className)) (pluginName: \(String(describing: pluginName)) does not exist.")
             }
         }
-        return obj
+        return obj!
     }
     
     func pathForResource(forResource resourcepath: String) -> String? {
