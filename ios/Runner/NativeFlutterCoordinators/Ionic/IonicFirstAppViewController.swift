@@ -46,49 +46,31 @@ class IonicFirstAppViewController:MainViewController {
             // NOTE: plugin names are matched as lowercase to avoid problems - however, a
             // possible issue is there can be duplicates possible if you had:
             // "org.apache.cordova.Foo" and "org.apache.cordova.foo" - only the lower-cased entry will match
-//            NSString* className = [self.pluginsMap objectForKey:[pluginName lowercaseString]];
         print("PLUGINS MAP:")
         print(pluginsMap)
 //
-        let className: String? = self.pluginsMap[pluginName.lowercased()] as? String
+        guard let className: String = self.pluginsMap[pluginName.lowercased()] as? String else {return nil}
 
-        var obj = self.pluginObjects[className]
-        if (obj == nil && className != nil) {
-            obj = NSClassFromString(className! as String)
-            let podBundle = Bundle(for: MainViewController.self)
-            let resourceURL = podBundle.resourceURL?.appendingPathComponent("ionicAppOne.bundle")
-            let resourceBundle = Bundle(url: resourceURL!)
-            
-            var fullClassName = NSString(string: "\(resourceBundle!.infoDictionary!["CFBundleExecutable"]!).\(className!)")
+        var obj: CDVPlugin? = self.pluginObjects[className] as? CDVPlugin
+        if (obj == nil) {
+            let pluginClass: CDVPlugin.Type = NSClassFromString(className as String) as! CDVPlugin.Type
+            let pluginInstance: CDVPlugin? = pluginClass.init(webViewEngine: self.webViewEngine)
+            obj = pluginInstance
+            if (obj == nil) {
+                let resourceBundle = Bundle(identifier: "org.cocoapods.ionicAppOne")
+                let fullClassName = NSString(string: "\(resourceBundle!.infoDictionary!["CFBundleExecutable"]!).\(className)")
+                let pluginClass: CDVPlugin.Type = NSClassFromString(fullClassName as String) as! CDVPlugin.Type
+                let pluginInstance: CDVPlugin? = pluginClass.init(webViewEngine: self.webViewEngine)
+                obj = pluginInstance
+            }
             
             if (obj != nil) {
-                self.register(obj as? CDVPlugin, withClassName: className! as String);
+                self.register(obj, withClassName: className as String);
             } else {
-                print("CDVPlugin class \(className) (pluginName: \(pluginName) does not exist.")
+                print("CDVPlugin class \(String(describing: className)) (pluginName: \(String(describing: pluginName)) does not exist.")
             }
         }
         return obj
-//            if (className == nil) {
-//                return nil;
-//            }
-//
-//            id obj = [self.pluginObjects objectForKey:className];
-//            if (!obj) {
-//                obj = [[NSClassFromString(className)alloc] initWithWebViewEngine:_webViewEngine];
-//                if (!obj) {
-//                    NSString* fullClassName = [NSString stringWithFormat:@"%@.%@",
-//                                               NSBundle.mainBundle.infoDictionary[@"CFBundleExecutable"],
-//                                               className];
-//                    obj = [[NSClassFromString(fullClassName)alloc] initWithWebViewEngine:_webViewEngine];
-//                }
-//
-//                if (obj != nil) {
-//                    [self registerPlugin:obj withClassName:className];
-//                } else {
-//                    NSLog(@"CDVPlugin class %@ (pluginName: %@) does not exist.", className, pluginName);
-//                }
-//            }
-//            return obj;
     }
     
     func pathForResource(forResource resourcepath: String) -> String? {
